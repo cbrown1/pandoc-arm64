@@ -1,0 +1,23 @@
+# Maintainer: codebreaker
+# Contributor: codebreaker
+pkgname=pandoc-data
+pkgver=2.9.1.1
+pkgrel=1
+pkgdesc="General markup converter - data files. Pandoc is a Haskell library for converting from one markup format to another, and a command-line tool that uses this library. It can read several dialects of Markdown and (subsets of) HTML, reStructuredText, LaTeX, DocBook, JATS, MediaWiki markup, DokuWiki markup, TWiki markup, TikiWiki markup, Jira markup, Creole 1.0, Haddock markup, OPML, Emacs Org-mode, Emacs Muse, txt2tags, ipynb (Jupyter notebooks), Vimwiki, Word Docx, ODT, EPUB, FictionBook2, roff man, and Textile, and it can write Markdown, reStructuredText, XHTML, HTML 5, LaTeX (including rendering as plain PDF or beamer slide shows), ConTeXt, DocBook, JATS, OPML, TEI, OpenDocument, ODT, Word docx, PowerPoint pptx, RTF, MediaWiki, DokuWiki, XWiki, ZimWiki, Textile, Jira, roff man, roff ms, GNU Texinfo, plain text, Emacs Org-Mode, AsciiDoc, Haddock markup, EPUB (v2 and v3), ipynb, FictionBook2, InDesign ICML, Muse, LaTeX beamer slides, PowerPoint, and several kinds of HTML/javaScript slide shows (S5, Slidy, Slideous, DZSlides, reveal.js). In contrast to most existing tools for converting Markdown to HTML, it consists of a set of readers, which parse text in a given format and produce a native representation of the document, and a set of writers, which convert this native representation into a target format. Thus, adding an input or output format requires only adding a reader or writer. This package contains the data files for pandoc."
+arch=('any')
+url="https://pandoc.org"
+license=('GPL')
+groups=('')
+options=('!strip' '!emptydirs')
+source=("http://ftp.br.debian.org/debian/pool/main/p/pandoc/pandoc-data_2.9.1.1-3_all.deb")
+sha512sums=('3e2be7cced8aeeb4900137c8532e780b2d7bf543c4f2e2f97f91f8ab067a9a98d8097b1d4a13059434db1f3d199ae0291853801955be4902fe3cbb25d7f3f4de')
+
+package(){
+
+	# Extract package data
+	tar xf data.tar.xz -C "${pkgdir}"
+
+	mkdir -p "${pkgdir}/usr/share/licenses/${pkgname}"
+	install -D -m644 "${pkgdir}/usr/share/doc/${pkgname}/copyright" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+}

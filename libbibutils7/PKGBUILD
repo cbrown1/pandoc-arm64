@@ -1,0 +1,31 @@
+# Maintainer: codebreaker
+# Contributor: codebreaker
+pkgname=bibutils7
+pkgver=6.10
+pkgrel=1
+pkgdesc="Bibliography file converter, shared library. COPAC, EndNote refer, EndNote XML, Pubmed XML, ISI web of science, US Library of Congress MODS, RIS, and Word 2007 bibliography. This package contains the shared library doing most of the work"
+arch=('aarch64')
+url="https://sourceforge.net/projects/bibutils"
+license=('GPL')
+groups=('')
+depends=('glibc>=2.17')
+options=('!strip' '!emptydirs')
+source=("http://ftp.br.debian.org/debian/pool/main/b/bibutils/libbibutils7_6.10-2_arm64.deb")
+sha512sums=('2893c39edfffb75efc3dfabb5d679006ca7d660ba42ce10ca47cc91d9cd12e8af48f12ac9b7e79e42e5e8f156c55523402c596a35f94ae13877f40e11632ac7a')
+
+package(){
+
+	mkdir -p tmp
+
+	tar xf data.tar.xz -C tmp
+	
+	mkdir -p "${pkgdir}/usr/lib"
+	mkdir -p "${pkgdir}/usr/share"
+	mkdir -p "${pkgdir}/usr/share/licenses/${pkgname}"
+
+	cp -a tmp/usr/lib/${arch}-linux-gnu/* "${pkgdir}/usr/lib"
+	cp -r tmp/usr/share/* "${pkgdir}/usr/share"
+	# cp "tmp/usr/share/doc/${pkgname}/copyright" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+
+}

@@ -1,0 +1,30 @@
+# Maintainer: codebreaker
+# Contributor: codebreaker
+pkgname=libpcre3
+pkgver=2_8.39
+pkgrel=1
+pkgdesc="Old Perl 5 Compatible Regular Expression Library - runtime files. This is a library of functions to support regular expressions whose syntax and semantics are as close as possible to those of the Perl 5 language. New packages should use the newer pcre2 packages, and existing packages should migrate to pcre2. This package contains the runtime libraries."
+arch=('aarch64')
+url=""
+license=('GPL')
+groups=('')
+depends=('glibc>=2.17')
+options=('!strip' '!emptydirs')
+source=("http://ftp.br.debian.org/debian/pool/main/p/pcre3/libpcre3_8.39-13_arm64.deb")
+sha512sums=('8382917a3be2b16a7a98a35f311d68d432f668de59ba7971ef8d8612b9406292bad3b367eeb2b83a29301aad44f7176a79e4fc15f08d31c5914525f096a96976')
+
+package(){
+	mkdir -p tmp
+
+	tar xf data.tar.xz -C tmp
+	
+	mkdir -p "${pkgdir}/usr/lib"
+	mkdir -p "${pkgdir}/usr/share"
+	mkdir -p "${pkgdir}/usr/share/licenses/${pkgname}"
+
+	cp -a tmp/lib/${arch}-linux-gnu/* "${pkgdir}/usr/lib"
+	cp -a tmp/usr/lib/${arch}-linux-gnu/* "${pkgdir}/usr/lib"
+	cp -r tmp/usr/share/* "${pkgdir}/usr/share"
+	cp "tmp/usr/share/doc/${pkgname}/copyright" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+}
