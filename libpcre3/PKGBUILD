@@ -25,6 +25,7 @@ package(){
 	cp -a tmp/lib/${arch}-linux-gnu/* "${pkgdir}/usr/lib"
 	cp -a tmp/usr/lib/${arch}-linux-gnu/* "${pkgdir}/usr/lib"
 	cp -r tmp/usr/share/* "${pkgdir}/usr/share"
+	rm -r "${pkgdir}/usr/share/man" # Can conflict with existing libpcre installation
 	cp "tmp/usr/share/doc/${pkgname}/copyright" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 
 }
