@@ -1,7 +1,7 @@
 # Maintainer: codebreaker
 # Contributor: codebreaker
 pkgname=pandoc
-pkgver=2.9.1.1
+pkgver=2.9.2.1
 pkgrel=1
 pkgdesc="general markup converter
  Pandoc is a Haskell library for converting from one markup format to another, and a command-line tool that uses this library."
@@ -9,10 +9,10 @@ arch=('aarch64')
 url="https://pandoc.org/"
 license=('GPL')
 groups=('')
-depends=('glibc>=2.29' 'gmp' 'icu>=67.1' 'libffi>=3.3' 'pandoc-data>=2.9.1.1' 'libyaml' 'pcre' 'zlib>=1.1.4')
+depends=('glibc>=2.29' 'gmp' 'icu>=67.1' 'libffi>=3.3' 'pandoc-data>=2.9.1.1' 'libyaml' 'pcre' 'zlib>=1.1.4', 'cmark-gfm>=0.29')
 options=('!strip' '!emptydirs')
-source=("http://ftp.br.debian.org/debian/pool/main/p/pandoc/pandoc_2.9.1.1-3_arm64.deb")
-sha512sums=('9116a41f1958f2c57365eb64eebd31073881191fa6eb69119bf3e647b252000eff1258fd9c0b1d396798c6a3fbdd21d8de9899eead2e3ea0c91b01c625f3ece4')
+source=("http://ftp.br.debian.org/debian/pool/main/p/pandoc/pandoc_2.9.2.1-1+b1_arm64.deb")
+sha512sums=('c371182d9345c98ee7c8bedbd87bb185045a2c1a3ad35243e3b393e20b2ea4f72f08e8e2f6cd8d5c32dacc3fc4f2548830e72802dd2c6887490f00d16479c2c7')
 
 package(){
 

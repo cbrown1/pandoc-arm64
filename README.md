@@ -3,3 +3,5 @@
 PKGBUILD files to re-package arm64 (from Debian) builds of pandoc and pandoc-citeproc and required dependencies for Arch Linux. 
 
 Tested and working on Manjaro Linux running on both Pinebook Pro and PinePhone hardware.
+
+To install run `makepkg -si` in each of the subdirectories.
