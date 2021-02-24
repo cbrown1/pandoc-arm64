@@ -9,9 +9,8 @@ url="https://pandoc.org"
 license=('GPL')
 groups=('')
 options=('!strip' '!emptydirs')
-source=("http://ftp.br.debian.org/debian/pool/main/p/pandoc/pandoc-data_2.9.1.1-3_all.deb")
-sha512sums=('3e2be7cced8aeeb4900137c8532e780b2d7bf543c4f2e2f97f91f8ab067a9a98d8097b1d4a13059434db1f3d199ae0291853801955be4902fe3cbb25d7f3f4de')
-
+source=("http://ftp.br.debian.org/debian/pool/main/p/pandoc/pandoc-data_2.9.2.1-1_all.deb")
+sha512sums=('8abc590d45c3a371cd8a69dcd66f009f72b7cc7b076d199aaa723f855f9f06dabd3aadc68af1189510e62432735ef5992b9f3067df5a01e7d79ec2e6089495cd')
 package(){
 
 	# Extract package data
